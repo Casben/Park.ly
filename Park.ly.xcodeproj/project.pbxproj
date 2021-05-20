@@ -14,6 +14,7 @@
 		CB3B2A812656B421006C14BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3B2A802656B421006C14BB /* Assets.xcassets */; };
 		CB3B2A842656B421006C14BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3B2A822656B421006C14BB /* LaunchScreen.storyboard */; };
 		CB3B2A8F2656B6CA006C14BB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B2A8E2656B6CA006C14BB /* RoundButton.swift */; };
+		CB3B2A922656BA9B006C14BB /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3B2A912656BA9B006C14BB /* LocationServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CB3B2A832656B421006C14BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3B2A852656B421006C14BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB3B2A8E2656B6CA006C14BB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		CB3B2A912656BA9B006C14BB /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		CB3B2A762656B41E006C14BB /* Park.ly */ = {
 			isa = PBXGroup;
 			children = (
+				CB3B2A902656BA8B006C14BB /* Services */,
 				CB3B2A8D2656B699006C14BB /* Model */,
 				CB3B2A8C2656B694006C14BB /* View */,
 				CB3B2A8B2656B68E006C14BB /* Controller */,
@@ -92,6 +95,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CB3B2A902656BA8B006C14BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CB3B2A912656BA9B006C14BB /* LocationServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +177,7 @@
 			files = (
 				CB3B2A8F2656B6CA006C14BB /* RoundButton.swift in Sources */,
 				CB3B2A7C2656B41E006C14BB /* ViewController.swift in Sources */,
+				CB3B2A922656BA9B006C14BB /* LocationServices.swift in Sources */,
 				CB3B2A782656B41E006C14BB /* AppDelegate.swift in Sources */,
 				CB3B2A7A2656B41E006C14BB /* SceneDelegate.swift in Sources */,
 			);
