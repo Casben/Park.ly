@@ -85,7 +85,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="directionButton" destination="T1a-uk-GMK" id="c8C-bK-pNI"/>
                         <outlet property="mapView" destination="rek-zM-jhM" id="EW9-LL-CfN"/>
+                        <outlet property="parkButton" destination="dNK-CD-TeG" id="Yvs-sx-Ich"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

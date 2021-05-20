@@ -11,6 +11,8 @@ import MapKit
 class MapVC: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var parkButton: RoundButton!
+    @IBOutlet weak var directionButton: RoundButton!
     var parkedCarAnnotation: ParkingSpot?
 
     override func viewDidLoad() {
@@ -21,6 +23,8 @@ class MapVC: UIViewController {
     
     func configure() {
         mapView.delegate = self
+        directionButton.isEnabled = false
+        setupLongPress()
     }
     
     @IBAction func resetMapCenter(_ sender: RoundButton) {
@@ -29,11 +33,17 @@ class MapVC: UIViewController {
     }
     
     @IBAction func parkButtonTapped(_ sender: RoundButton) {
-        if mapView.annotations.count == 1 {
+        mapView.removeAnnotations(mapView.annotations)
+        
+        if parkedCarAnnotation == nil {
             guard let coordinates = LocationServices.shared.currentLocation else { return }
             setupAnnotation(coordinate: coordinates)
+            parkButton.setImage(#imageLiteral(resourceName: "foundCar"), for: .normal)
+            directionButton.isEnabled = true
         } else {
-            // move annotations
+            parkButton.setImage(#imageLiteral(resourceName: "parkCar"), for: .normal)
+            parkedCarAnnotation = nil
+            directionButton.isEnabled = false
         }
     }
 
@@ -65,7 +75,7 @@ extension MapVC: MKMapViewDelegate {
             let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
             view.canShowCallout = true
             view.animatesDrop = true
-            view.pinTintColor = .red
+            view.pinTintColor = .systemIndigo
             view.calloutOffset = CGPoint(x: -8, y: -3)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             return view
@@ -77,5 +87,25 @@ extension MapVC: MKMapViewDelegate {
 extension MapVC: CustomUserLocDelegate {
     func userLocationUpdated(location: CLLocation) {
         centerMapOnUserLocation(coordinates: location.coordinate)
+    }
+}
+
+extension MapVC {
+    func setupLongPress() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(hanldeLongPress))
+        longPress.minimumPressDuration = 0.75
+        mapView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func hanldeLongPress(_ gesture: UILongPressGestureRecognizer) {
+        mapView.removeAnnotations(mapView.annotations)
+        
+        if gesture.state == .ended {
+            let point = gesture.location(in: mapView)
+            let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+            setupAnnotation(coordinate: coordinate)
+            parkButton.setImage(#imageLiteral(resourceName: "foundCar"), for: .normal)
+            directionButton.isEnabled = true
+        }
     }
 }
