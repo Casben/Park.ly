@@ -25,20 +25,41 @@
                                     <constraint firstAttribute="height" constant="128" id="jFn-Gn-HrL"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jvr-pO-1WY">
-                                <rect key="frame" x="138" y="812" width="138" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jvr-pO-1WY">
+                                <rect key="frame" x="111.5" y="767" width="191" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM7-Pt-55j">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM7-Pt-55j" customClass="RoundButton" customModule="Park_ly" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="12.5" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="1uW-OH-hVR"/>
+                                            <constraint firstAttribute="height" constant="50" id="ljm-Cr-uff"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="location" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-CD-TeG">
-                                        <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-CD-TeG" customClass="RoundButton" customModule="Park_ly" customModuleProvider="target">
+                                        <rect key="frame" x="58" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Rmp-YN-eOK"/>
+                                            <constraint firstAttribute="width" constant="75" id="TEa-Pm-Yc9"/>
+                                        </constraints>
+                                        <state key="normal" image="parkCar"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1a-uk-GMK">
-                                        <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1a-uk-GMK" customClass="RoundButton" customModule="Park_ly" customModuleProvider="target">
+                                        <rect key="frame" x="141" y="12.5" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.96958178279999996" green="0.97658222910000003" blue="0.97946935889999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2ek-Gq-UNA"/>
+                                            <constraint firstAttribute="width" constant="50" id="Ofb-8U-DLI"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="car" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -64,7 +85,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="car" catalog="system" width="128" height="93"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="park.ly-logo" width="273" height="75"/>
+        <image name="parkCar" width="51" height="39"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
