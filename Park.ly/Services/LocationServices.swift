@@ -8,8 +8,14 @@
 import Foundation
 import CoreLocation
 
+protocol CustomUserLocDelegate {
+    func userLocationUpdated(location: CLLocation)
+}
+
 class LocationServices: NSObject, CLLocationManagerDelegate {
     static let shared = LocationServices()
+    
+    var customUserLocDelegate: CustomUserLocDelegate?
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D?
@@ -24,5 +30,9 @@ class LocationServices: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.currentLocation = manager.location?.coordinate
+        
+        if customUserLocDelegate != nil {
+            customUserLocDelegate?.userLocationUpdated(location: locations.first!)
+        }
     }
 }

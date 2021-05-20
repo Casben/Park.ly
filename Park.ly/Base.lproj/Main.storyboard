@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Park_ly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapVC" customModule="Park_ly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,9 @@
                                         <state key="normal" image="location" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="resetMapCenter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WlZ-VG-aZZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-CD-TeG" customClass="RoundButton" customModule="Park_ly" customModuleProvider="target">
                                         <rect key="frame" x="58" y="0.0" width="75" height="75"/>
@@ -78,6 +81,9 @@
                             <constraint firstItem="rek-zM-jhM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vKb-3P-CDy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="rek-zM-jhM" id="EW9-LL-CfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
